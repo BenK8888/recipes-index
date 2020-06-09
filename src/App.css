@@ -1,0 +1,116 @@
+
+
+.titlePictureDiv{
+   text-align: center;
+   padding-top: 20px;
+ }
+
+
+.titlePicture{
+  height: 10vh;
+}
+
+
+.subTitle{
+   text-align: center;
+   font-size: 2.5vh;
+   flex-wrap: wrap;
+   width: auto;
+   height: auto;
+ }
+
+
+.App {
+  min-height: 100vh;
+  background-image: url("pics/background.jpg");
+  background-size: contain;
+  
+}
+
+
+.search-form{
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.search-bar{
+  width: 50%;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+
+.search-button{
+  background: rgb(219, 18, 18);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+
+.recipes{
+  display: flex;
+  justify-content: baseline;
+  flex-wrap: wrap;
+}
+
+
+.recipe{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: white;
+  border-radius: 20px;
+  box-shadow:  0px 5px 20px rgb(80, 76, 76);
+  margin: auto;
+  
+}
+
+
+.recipeImageRow{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+
+.image{
+  border-radius: 10%;
+  max-height: 50vh;
+  max-width: 50vw;
+}
+
+
+.recipeDetailsRow{
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.7vh;
+}
+
+
+@media (min-width:600px)  {
+  .recipe{
+    max-width: 44vw; 
+  }
+  .image{
+    max-width: 22vw; 
+  }
+}
+
+
+@media (min-width:1025px)  {
+  .recipe{
+    margin: 1.5vh;
+    max-width: 31vw; 
+  }
+  .image{
+    max-width: 15vw; 
+  }
+}
