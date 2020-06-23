@@ -89,11 +89,20 @@
 
 
 .recipeDetailsRow{
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-right: 0.7vh;
 }
 
+.moreRecipesBtn{
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: rgb(170, 170, 170);
+}
 
 @media (min-width:600px)  {
   .recipe{

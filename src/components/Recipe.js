@@ -18,6 +18,7 @@ const Recipe = ({ label, image, ingredients }) => {
                         </div>
                     ))}
                 </ol>
+                <button className="moreRecipesBtn"><i className="ellipsis horizontal icon"></i></button>
             </div>
         </div>
     );
