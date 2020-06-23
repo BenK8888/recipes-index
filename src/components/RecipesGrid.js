@@ -44,6 +44,7 @@ class RecipesGrid extends React.Component {
                             label={recipe.recipe.label}  
                             image={recipe.recipe.image}
                             ingredients={recipe.recipe.ingredients}
+                            getRecipes={this.getRecipes}
                         />
                     ))}
                 </div>

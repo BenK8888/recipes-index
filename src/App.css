@@ -101,7 +101,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  color: rgb(170, 170, 170);
+  color: red;
+  font-size: 2.2vh;
 }
 
 @media (min-width:600px)  {
