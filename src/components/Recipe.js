@@ -52,11 +52,8 @@ const relatedRecipes = (ingredients, getRecipesAction) => {
         })
     })                          
     //join the strings in the array into one string
-    finalArray = finalArray.join(' ');
-    //log the string of words that will be used as search terms for easy managing
-    //console.log(finalArray);                                              
+    finalArray = finalArray.join(' ');                                             
     getRecipesAction(finalArray) ;
-    
 }
 
 
