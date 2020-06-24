@@ -23,9 +23,9 @@ class Recipe extends React.Component {
                             </div>
                         ))}
                     </ol>
-                    <button className="moreRecipesBtn" onClick={() => relatedRecipes(this.props.ingredients, this.props.getRecipesAction)}>
+                    <button className="moreRecipesBtn" onClick={() => relatedRecipes(this.props.ingredients, this.props.getRecipesAction)} title="more recipes like this!">
                         <i className="ellipsis horizontal icon">
-                            </i>
+                        </i>
                     </button>
                 </div>
             </div>

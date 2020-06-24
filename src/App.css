@@ -103,7 +103,13 @@
   right: 0;
   color: red;
   font-size: 2.2vh;
+  transition: all .3s ease-in-out;
 }
+
+.moreRecipesBtn:hover{
+  transform: scale(2)
+}
+
 
 @media (min-width:600px)  {
   .recipe{
