@@ -9,7 +9,7 @@ import titlePhoto from '../pics/title.png';
 
 
 //the default search term for the first time the website is being mounted.
-var searchTerm = 'potato';
+var searchTerm = 'banana';
 
 
 class RecipesGrid extends React.Component {
@@ -35,7 +35,7 @@ class RecipesGrid extends React.Component {
                 <button  className="search-button" type="submit">
                     Search
                 </button>
-                <input className="search-bar" type="text" onChange={ e => { searchTerm = e.target.value }}/>
+                <input className="search-bar" type="text" value="banana" onChange={ e => { searchTerm = e.target.value }}/>
                 </form>
                 <div className="recipes">
                     {this.props.recipes.map(recipe => (
