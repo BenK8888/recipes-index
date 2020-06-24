@@ -41,19 +41,20 @@ const relatedRecipes = (ingredients, getRecipesAction) => {
     const basicIngredList = ['salt','pepper','oil','flour','garlic','sugar','water','onion','olive','chicken','juice','milk','lemon','butter','egg','cheese','wheat','vegetable','vanilla','vinegar','parsley','honey','soy','wine','seeds','celery','rice','cinnamon','tomato','bread','eggs','onions','yeast','leaves','broth','tomatoes','cream','cloves','thyme','peeled','ginger','beans','soda','basil','mushrooms','apple','parmesan','yogurt','stock','bell','oats','sodium','beef','flakes','carrot','oregano','chocolate','cumin','paprika','sesame','mustard','spinach','corn','potatoes','coconut','carrots','nutmeg','cilantro','raisins','chili','syrup','peas','peanut','almond','walnuts','canned','lime','leaf','pineapple','margarine','cabbage','cucumber','broccoli','cornstarch','zucchini','coriander', 'paste','turkey' ,'banana','almonds' ,'nuts','maple' ,'cheddar' ,'cider' ,'scallions', 'lettuce', 'dill'];
     let keyIngredWords = [];
     let finalArray = [];
-    for (let i = 0; i<ingredients.length; i++) {                            //loop every line of ingredient text
-        keyIngredWords[i] = (ingredients[i].text.split(' '))  
-        for (let j = 0; j<keyIngredWords[i].length; j++) {                  //loop every word
-            for (let k = 0; k<basicIngredList.length; k++) {                //compare it with any basic ingredient in list
-                if (keyIngredWords[i][j] === basicIngredList[k]) {
-                    finalArray.push(keyIngredWords[i][j]);
+    ingredients.map((ingredient) =>{                                      //map over every ingredient line
+        keyIngredWords = (ingredient.text.split(' '));                  
+        keyIngredWords.map((keyIngredWord) => {                           //map over every word in ingredient line
+            basicIngredList.map((basicIngredItem) => {                    //map over every word in the basic ingredients list  
+                if (keyIngredWord === basicIngredItem) {
+                    finalArray.push(keyIngredWord);
                 }
-            }
-        }
-    }
+            })
+        })
+    })                          
     //join the strings in the array into one string
     finalArray = finalArray.join(' ');
-    console.log(finalArray);                                                //log the string of words that will be used as search terms
+    //log the string of words that will be used as search terms for easy managing
+    //console.log(finalArray);                                              
     getRecipesAction(finalArray) ;
     
 }
