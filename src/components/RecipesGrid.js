@@ -35,7 +35,7 @@ class RecipesGrid extends React.Component {
                 <button  className="search-button" type="submit">
                     Search
                 </button>
-                <input className="search-bar" type="text" value="banana" onChange={ e => { searchTerm = e.target.value }}/>
+                <input className="search-bar" type="text" defaultValue="banana" onChange={ e => { searchTerm = e.target.value }}/>
                 </form>
                 <div className="recipes">
                     {this.props.recipes.map(recipe => (
