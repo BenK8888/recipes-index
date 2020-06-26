@@ -2,6 +2,7 @@ import '../App.css';
 import React from 'react';
 import { connect } from 'react-redux';
 import  {getRecipes}  from '../actions';
+import {Link} from 'react-router-dom';
 
 
 var i = 0;
@@ -11,21 +12,24 @@ class Recipe extends React.Component {
     render() {
         return(
             <div className="recipe">
-                <div className="recipeImageRow">
+                <Link to={`/${this.props.label}`}>
+                    <div className="recipeImageRow">
                     <img className="image" src={this.props.image} alt=""/>
                 </div>
+                </Link>
                 <div className="recipeDetailsRow">
-                    <h2>{this.props.label}</h2>
-                    <ol className="ol">
-                        {this.props.ingredients.map( ingredient => (
-                            <div key = {i++}>
-                                <li>{ingredient.text}</li>
-                            </div>
-                        ))}
-                    </ol>
+                    <Link to={`/${this.props.label}`}>  
+                        <h2>{this.props.label}</h2>
+                        <ol className="ol">
+                            {this.props.ingredients.map( ingredient => (
+                                <div key = {i++}>
+                                    <li>{ingredient.text}</li>
+                                </div>
+                            ))}
+                        </ol>
+                    </Link>
                     <button className="moreRecipesBtn" onClick={() => relatedRecipes(this.props.ingredients, this.props.getRecipesAction)} title="more recipes like this!">
-                        <i className="ellipsis horizontal icon">
-                        </i>
+                        <i className="ellipsis horizontal icon"></i>
                     </button>
                 </div>
             </div>
