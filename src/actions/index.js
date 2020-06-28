@@ -15,3 +15,14 @@ export const getRecipes = (searchTerm) => async (dispatch) => {
     //manually dispatching the action since we use a middleware.
     dispatch ({ type: 'GET_RECIPES', payload: data.hits });
 }
+
+export const getRecipe = (searchTerm, recipeLabel) => async (dispatch) => {
+    const response = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`);
+    const data = await response.json();    
+    data.hits.forEach(recipe => {   
+        if(recipe.recipe.label === recipeLabel) {
+            console.log(recipe);        
+            dispatch ({ type: 'GET_RECIPE', payload: recipe });
+        }
+    })
+}
