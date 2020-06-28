@@ -9,16 +9,17 @@ var i = 0;
 
 
 class Recipe extends React.Component {
+
     render() {
         return(
             <div className="recipe">
-                <Link to={`/${this.props.label}`}>
+                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>
                     <div className="recipeImageRow">
                     <img className="image" src={this.props.image} alt=""/>
                 </div>
                 </Link>
                 <div className="recipeDetailsRow">
-                    <Link to={`/${this.props.label}`}>  
+                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>  
                         <h2>{this.props.label}</h2>
                         <ol className="ol">
                             {this.props.ingredients.map( ingredient => (
@@ -56,7 +57,7 @@ const relatedRecipes = (ingredients, getRecipesAction) => {
         })
     })                          
     //join the strings in the array into one string
-    finalArray = finalArray.join(' ');                                             
+    finalArray = finalArray.join(' ');                                            
     getRecipesAction(finalArray) ;
 }
 
@@ -70,6 +71,8 @@ function mapDispatchToProps(dispatch){
     }
   }
 
+
+   
 
 
 export default connect (null, mapDispatchToProps) (Recipe);
