@@ -110,6 +110,26 @@
 }
 
 
+.recipePage{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  height: auto;
+  width: auto;
+}
+
+.recipePage label{
+  font-size: 5vh;
+  margin: 20px;
+} 
+
+ .recipePage img{
+  width:100%; 
+  height:auto; 
+} 
+
+
 @media (min-width:600px)  {
   .recipe{
     max-width: 44vw; 

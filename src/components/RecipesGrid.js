@@ -9,23 +9,20 @@ import titlePhoto from '../pics/title.png';
 
 
 //the default search term for the first time the website is being mounted.
-//var searchTerm = 'banana';
+var searchTerm = 'banana';
 
 
 class RecipesGrid extends React.Component {
-
-    state = {searchTerm: 'banana'};
-
     //run once after the mounting of the page and get the web api results using the default value.
     componentDidMount() {
-        this.props.getRecipes(this.state.searchTerm);        
+        this.props.getRecipes(searchTerm);        
     }
 
 
     //get the web api results using the input the user typed in the search field.
     onSubmitToGetRecipes = (e) => {
         e.preventDefault();
-        this.props.getRecipes(this.state.searchTerm);
+        this.props.getRecipes(searchTerm);
     }
 
     
@@ -38,12 +35,12 @@ class RecipesGrid extends React.Component {
                 <button  className="search-button" type="submit">
                     Search
                 </button>
-                <input className="search-bar" type="text" defaultValue="banana" onChange={ e =>  this.setState({searchTerm: e.target.value})}/>
+                <input className="search-bar" type="text" defaultValue="banana" onChange={ e =>  searchTerm = e.target.value}/>
                 </form>
                 <div className="recipes">
                     {this.props.recipes.map(recipe => (
                         <Recipe 
-                            searchTerm = {this.state.searchTerm}
+                            searchTerm = {searchTerm}
                             key={recipe.recipe.label}
                             label={recipe.recipe.label}  
                             image={recipe.recipe.image}
