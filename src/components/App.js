@@ -10,8 +10,8 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 const App = () => {
   return (
     <Router>
-      <Nav />
       <div className="App">
+        <Nav />
         <div className="titlePictureDiv"><img className="titlePicture" src={titlePhoto} alt=""/></div>
         <div className="subTitle">What would you like to cook today?</div>
         <Route path="/" exact component={RecipesGrid}/>
