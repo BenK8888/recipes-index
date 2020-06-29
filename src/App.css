@@ -164,3 +164,411 @@
     max-width: 15vw; 
   }
 }
+
+.titlePictureDiv{
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+.titlePicture{
+ height: 10vh;
+}
+
+
+.subTitle{
+  text-align: center;
+  font-size: 2.5vh;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+}
+
+
+.App {
+ min-height: 100vh;
+ background-image: url("pics/background.jpg");
+ background-size: contain;
+ 
+}
+
+
+.search-form{
+ min-height: 10vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.search-bar{
+ width: 50%;
+ border: none;
+ padding: 10px;
+ border-radius: 20px;
+}
+
+
+.search-button{
+ background: rgb(219, 18, 18);
+ border: none;
+ padding: 10px 20px;
+ color: white;
+ border-radius: 20px;
+ margin-right: 10px;
+}
+
+
+.recipes{
+ display: flex;
+ justify-content: baseline;
+ flex-wrap: wrap;
+}
+
+
+.recipe{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ background: white;
+ border-radius: 20px;
+ box-shadow:  0px 5px 20px rgb(80, 76, 76);
+ margin: auto;
+ margin-top: 1vh;
+ 
+}
+
+
+.recipeImageRow{
+ margin: auto;
+ display: flex;
+ flex-direction: column;
+ background: white;
+}
+
+
+.image{
+ border-radius: 10%;
+ max-height: 50vh;
+ max-width: 50vw;
+}
+
+
+.recipeDetailsRow{
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ margin-right: 0.7vh;
+}
+
+.moreRecipesBtn{
+ border: none;
+ background-color: transparent;
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ color: red;
+ font-size: 2.2vh;
+ transition: all .3s ease-in-out;
+}
+
+.moreRecipesBtn:hover{
+ transform: scale(2)
+}
+
+.recipePage{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ background-color: white;
+ box-shadow:  0px 5px 20px rgb(80, 76, 76);
+ border-radius: 10px;
+ margin: auto;
+ margin-top: 4vh;
+ height: auto;
+ width: 65vw;
+ max-width: 800px;
+ padding: 3vh;
+}
+
+.recipePage label{
+ font-size: 4vh;
+ font-weight: bold;
+} 
+
+.recipePageImgDiv {
+ text-align: center;
+ margin-top: 3vh;
+}
+
+.recipePage img{
+ width:30vh; 
+ height:auto; 
+} 
+
+.recipePageList {
+ font-weight: bold;
+}
+
+
+@media (min-width:600px)  {
+ .recipe{
+   max-width: 44vw; 
+ }
+ .image{
+   max-width: 22vw; 
+ }
+}
+
+
+@media (min-width:1025px)  {
+ .recipe{
+   margin: 1.5vh;
+   max-width: 31vw; 
+ }
+ .image{
+   max-width: 15vw; 
+ }
+}
+
+/*MENU */
+.navTop {
+  text-align: center;
+	line-height: 32px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+/* 
+.navTop h1 {
+	font-size: 60px;
+	text-align: center;
+	color: #FFF;
+}	 */
+
+/* .navTop h3 {
+	font-size: 30px;
+	line-height: 34px;
+	text-align: center;
+	color: #FFF;
+} */
+
+/* .navTop h3 a {
+	color: #FFF;
+} */
+
+/* .navTop a {
+	color: #FFF;
+} */
+
+/* .navTop h1 {
+	margin-top: 100px;
+	text-align:center;
+	font-size:60px;
+	line-height: 70px;
+	font-family: 'Bree Serif', 'serif';
+	} */
+
+  /* .navTop #container {
+	margin: 0 auto;
+	max-width: 890px;
+} */
+
+.navTop p {
+	text-align: center;
+}
+
+.navTop .toggle,
+[id^=drop] {
+	display: none;
+}
+
+/* Giving a background-color to the nav container. */
+.navTop nav { 
+	margin:0;
+	padding: 0;
+	background-color: #254441;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+/* 
+ .navTop nav:after {
+	content:"";
+	display:table;
+	clear:both;
+} */
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+ .navTop nav ul {
+	padding:0;
+	margin:0;
+	list-style: none;
+	position: relative;
+	}
+	
+/* Positioning the navigation items inline */
+.navTop nav ul li {
+	margin: 0px;
+	display:inline-block;
+	background-color: #254441;
+	}
+
+/* Styling the links */
+.navTop nav a {
+	display:block;
+	padding:14px 20px;	
+	color:#FFF;
+	font-size:17px;
+	text-decoration:none;
+}
+
+
+/* .navTop nav ul li ul li:hover { background: #000000; } */
+
+/* Background color change on Hover */
+.navTop nav a:hover { 
+	background-color: #000000; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+ .navTop nav ul ul {
+	display: none;
+	position: absolute; 
+	/* has to be the same number as the "line-height" of "nav a" */
+	top: 60px; 
+}
+	
+/* Display Dropdowns on Hover */
+.navTop nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+.navTop nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+/* .navTop nav ul ul ul li {
+	position: relative;
+	top:-60px;
+	left:170px; 
+} */
+
+	
+/* Change ' +' in order to change the Dropdown symbol */
+/* .navTop li > a:after { content:  ' +'; }
+.navTop li > a:only-child:after { content: ''; } */
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+	.navTop nav {
+		margin: 0;
+	}
+
+	/* Hide the navigation menu by default */
+	.navTop .toggle + a,
+	.navTop .menu {
+		display: none;
+	}
+
+	/* Styling the toggle lable */
+	.navTop .toggle {
+		display: block;
+		background-color: #254441;
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px;
+		text-decoration:none;
+		border:none;
+	}
+
+	.navTop .toggle:hover {
+		background-color: #000000;
+	}
+
+	/* Display Dropdown when clicked on Parent Label */
+	[id^=drop]:checked + ul {
+		display: block;
+	}
+
+	/* Change menu item's width to 100% */
+	.navTop nav ul li {
+		display: block;
+		width: 100%;
+		}
+
+    .navTop nav ul ul .toggle,
+    .navTop nav ul ul a {
+		padding: 0 40px;
+	}
+
+	.navTop nav ul ul ul a {
+		padding: 0 80px;
+	}
+
+	.navTop nav a:hover,
+  .navTop nav ul ul ul a {
+		background-color: #000000;
+	}
+  
+	.navTop nav ul li ul li .toggle,
+	.navTop nav ul ul a,
+  .navTop nav ul ul ul a{
+		padding:14px 20px;	
+		color:#FFF;
+		font-size:17px; 
+	}
+  
+  
+	.navTop nav ul li ul li .toggle,
+	.navTop nav ul ul a {
+		background-color: #212121; 
+	}
+
+	/* Hide Dropdowns by Default */
+	.navTop nav ul ul {
+		float: none;
+		position:static;
+		color: #ffffff;
+	}
+		
+	/* Hide menus on hover */
+	.navTop nav ul ul li:hover > ul,
+	.navTop nav ul li:hover > ul {
+		display: none;
+	}
+		
+	/* Fisrt Dropdown */
+	.navTop nav ul ul li {
+		display: block;
+		width: 100%;
+	}
+
+	.navTop nav ul ul ul li {
+		position: static;
+	}
+
+}
+
+@media all and (max-width : 330px) {
+
+	.navTop nav ul li {
+		display:block;
+		width: 94%;
+	}
+
+}
