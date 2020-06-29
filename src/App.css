@@ -74,6 +74,7 @@
 
 
 .recipeImageRow{
+  text-align: center;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -82,6 +83,7 @@
 
 
 .image{
+  margin: auto;
   border-radius: 10%;
   max-height: 50vh;
   max-width: 50vw;
@@ -101,7 +103,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  color: red;
+  color: rgb(0, 195, 255);
   font-size: 2.2vh;
   transition: all .3s ease-in-out;
 }
@@ -248,11 +250,12 @@
 
 
 .image{
+ display: block;
+ margin: 0 auto;
  border-radius: 10%;
  max-height: 50vh;
  max-width: 50vw;
 }
-
 
 .recipeDetailsRow{
  position: relative;
@@ -337,44 +340,6 @@
 	line-height: 32px;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
-
-/* 
-.navTop h1 {
-	font-size: 60px;
-	text-align: center;
-	color: #FFF;
-}	 */
-
-/* .navTop h3 {
-	font-size: 30px;
-	line-height: 34px;
-	text-align: center;
-	color: #FFF;
-} */
-
-/* .navTop h3 a {
-	color: #FFF;
-} */
-
-/* .navTop a {
-	color: #FFF;
-} */
-
-/* .navTop h1 {
-	margin-top: 100px;
-	text-align:center;
-	font-size:60px;
-	line-height: 70px;
-	font-family: 'Bree Serif', 'serif';
-	} */
-
-  /* .navTop #container {
-	margin: 0 auto;
-	max-width: 890px;
-} */
-
 .navTop p {
 	text-align: center;
 }
@@ -390,15 +355,6 @@
 	padding: 0;
 	background-color: #254441;
 }
-
-/* Since we'll have the "ul li" "float:left"
- * we need to add a clear after the container. */
-/* 
- .navTop nav:after {
-	content:"";
-	display:table;
-	clear:both;
-} */
 
 /* Removing padding, margin and "list-style" from the "ul",
  * and adding "position:reltive" */
@@ -426,8 +382,6 @@
 }
 
 
-/* .navTop nav ul li ul li:hover { background: #000000; } */
-
 /* Background color change on Hover */
 .navTop nav a:hover { 
 	background-color: #000000; 
@@ -438,7 +392,6 @@
  .navTop nav ul ul {
 	display: none;
 	position: absolute; 
-	/* has to be the same number as the "line-height" of "nav a" */
 	top: 60px; 
 }
 	
@@ -455,20 +408,6 @@
 	position: relative;
 }
 
-/* Second, Third and more Tiers	
- * We move the 2nd and 3rd etc tier dropdowns to the left
- * by the amount of the width of the first tier.
-*/
-/* .navTop nav ul ul ul li {
-	position: relative;
-	top:-60px;
-	left:170px; 
-} */
-
-	
-/* Change ' +' in order to change the Dropdown symbol */
-/* .navTop li > a:after { content:  ' +'; }
-.navTop li > a:only-child:after { content: ''; } */
 
 
 /* Media Queries

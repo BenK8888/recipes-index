@@ -13,11 +13,11 @@ class Recipe extends React.Component {
     render() {
         return(
             <div className="recipe">
-                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>
-                    <div className="recipeImageRow">
-                    <img className="image" src={this.props.image} alt=""/>
+                <div className="recipeImageRow">
+                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>
+                        <img className="image" src={this.props.image} alt=""/>
+                    </Link>
                 </div>
-                </Link>
                 <div className="recipeDetailsRow">
                 <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>  
                         <h2>{this.props.label}</h2>
