@@ -5,8 +5,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Recipe from '../components/Recipe';
 import { getRecipes } from '../actions';
-import titlePhoto from '../pics/title.png';
-
 
 //the default search term for the first time the website is being mounted.
 var searchTerm = 'banana';
@@ -28,18 +26,17 @@ class RecipesGrid extends React.Component {
     
     render(){
         return(
-            <div className="App">
-                <div className="titlePictureDiv"><img className="titlePicture" src={titlePhoto} alt=""/></div>
-                <div className="subTitle">What would you like to cook today?</div>
+            <div>
                 <form onSubmit={this.onSubmitToGetRecipes} className="search-form">
                 <button  className="search-button" type="submit">
                     Search
                 </button>
-                <input className="search-bar" type="text" defaultValue="banana" onChange={ e => { searchTerm = e.target.value }}/>
+                <input className="search-bar" type="text" defaultValue="banana" onChange={ e =>  searchTerm = e.target.value}/>
                 </form>
                 <div className="recipes">
                     {this.props.recipes.map(recipe => (
                         <Recipe 
+                            searchTerm = {searchTerm}
                             key={recipe.recipe.label}
                             label={recipe.recipe.label}  
                             image={recipe.recipe.image}
