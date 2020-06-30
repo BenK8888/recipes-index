@@ -21,7 +21,7 @@ export const getRecipe = (searchTerm, recipeLabel) => async (dispatch) => {
     const data = await response.json();    
     data.hits.forEach(recipe => {   
         if(recipe.recipe.label === recipeLabel) {
-            console.log(recipe);        
+            //console.log(recipe);        
             dispatch ({ type: 'GET_RECIPE', payload: recipe });
         }
     })

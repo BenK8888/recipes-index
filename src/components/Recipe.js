@@ -6,20 +6,23 @@ import {Link} from 'react-router-dom';
 
 
 var i = 0;
+let searchTermChanged = '';
 
 
 class Recipe extends React.Component {
-
     render() {
+        if (searchTermChanged === '') {
+            searchTermChanged = this.props.searchTerm;
+        }
         return(
             <div className="recipe">
                 <div className="recipeImageRow">
-                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>
+                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermChanged}}}>
                         <img className="image" src={this.props.image} alt=""/>
                     </Link>
                 </div>
                 <div className="recipeDetailsRow">
-                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: this.props.searchTerm}}}>  
+                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermChanged}}}>  
                         <h2>{this.props.label}</h2>
                         <ol className="ol">
                             {this.props.ingredients.map( ingredient => (
@@ -29,7 +32,10 @@ class Recipe extends React.Component {
                             ))}
                         </ol>
                     </Link>
-                    <button className="moreRecipesBtn" onClick={() => relatedRecipes(this.props.ingredients, this.props.getRecipesAction)} title="more recipes like this!">
+                    <button className="moreRecipesBtn" onClick={() => {
+                        searchTermChanged = relatedRecipes(this.props.ingredients, this.props.getRecipesAction);
+                        console.log(searchTermChanged);
+                    }} title="more recipes like this!">
                         <i className="ellipsis horizontal icon"></i>
                     </button>
                 </div>
@@ -57,8 +63,9 @@ const relatedRecipes = (ingredients, getRecipesAction) => {
         })
     })                          
     //join the strings in the array into one string
-    finalArray = finalArray.join(' ');                                            
+    finalArray = finalArray.join(' ');
     getRecipesAction(finalArray) ;
+    return finalArray;
 }
 
 

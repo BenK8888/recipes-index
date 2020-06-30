@@ -10,7 +10,9 @@ var i =0;
 class RecipePage extends React.Component {
     componentDidMount() {
         //the 'match' property is automatically
-        this.props.getRecipe(this.props.location.state.searchTerm,this.props.match.params.label);   
+        this.props.getRecipe(this.props.location.state.searchTerm,this.props.match.params.label); 
+        console.log(this.props.location);
+          
           
     }
 
