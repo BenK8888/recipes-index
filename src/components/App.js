@@ -12,7 +12,7 @@ const App = () => {
     <Router>
       <Nav />
       <div className="App">
-        <div className="titlePictureDiv"><img className="titlePicture" src={titlePhoto} alt=""/></div>
+        <div className="titlePictureDiv"><a href="/"><img className="titlePicture" src={titlePhoto} alt=""/></a></div>
         <div className="subTitle">What would you like to cook today?</div>
         <Route path="/" exact component={RecipesGrid}/>
         <Route path="/:label" component={RecipePage}/>
