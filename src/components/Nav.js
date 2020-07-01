@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import  {getRecipes}  from '../actions';
 
 
-
+//<li><a href="#" onClick={()=> this.props.getRecipesAction('BreakFast')}>BreakFast</a></li>
 
 class Nav extends React.Component {
     render(){

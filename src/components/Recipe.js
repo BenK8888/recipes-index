@@ -5,24 +5,30 @@ import  {getRecipes}  from '../actions';
 import {Link} from 'react-router-dom';
 
 
+//initialze variables
 var i = 0;
-let searchTermChanged = '';
+let searchTermUpdated = '';
+let relatedRecipesValue = '';
 
 
 class Recipe extends React.Component {
     render() {
-        if (searchTermChanged === '') {
-            searchTermChanged = this.props.searchTerm;
+        //checks if used the 'relatedRecipes' function. if so, we want to change the search term we use in order to get the right recipePage when clicked.
+        if (relatedRecipesValue) {
+            searchTermUpdated = relatedRecipesValue;
+        } else {
+            searchTermUpdated = this.props.searchTerm;
         }
+        
         return(
             <div className="recipe">
                 <div className="recipeImageRow">
-                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermChanged}}}>
+                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>
                         <img className="image" src={this.props.image} alt=""/>
                     </Link>
                 </div>
                 <div className="recipeDetailsRow">
-                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermChanged}}}>  
+                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>  
                         <h2>{this.props.label}</h2>
                         <ol className="ol">
                             {this.props.ingredients.map( ingredient => (
@@ -33,10 +39,10 @@ class Recipe extends React.Component {
                         </ol>
                     </Link>
                     <button className="moreRecipesBtn" onClick={() => {
-                        searchTermChanged = relatedRecipes(this.props.ingredients, this.props.getRecipesAction);
-                        console.log(searchTermChanged);
+                        relatedRecipesValue = relatedRecipes(this.props.ingredients, this.props.getRecipesAction);
+                        console.log(searchTermUpdated);
                     }} title="more recipes like this!">
-                        <i className="ellipsis horizontal icon"></i>
+                        <i className="ellipsis horizontal icon"></i>{this.props.searchTerm}
                     </button>
                 </div>
             </div>
