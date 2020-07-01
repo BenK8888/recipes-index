@@ -11,3 +11,6 @@ Hello & welcome to the Recipes Index project in which end users get recipes from
 * Web API
 * CSS
 * HTML
+
+
+![ScreenShot](https://raw.github.com/BenK8888/recipes-index/master/public/website_readme.jpg)
