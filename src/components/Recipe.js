@@ -23,12 +23,12 @@ class Recipe extends React.Component {
         return(
             <div className="recipe">
                 <div className="recipeImageRow">
-                    <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>
+                    <Link to={{pathname:`/recipePage/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>
                         <img className="image" src={this.props.image} alt=""/>
                     </Link>
                 </div>
                 <div className="recipeDetailsRow">
-                <Link to={{pathname:`/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>  
+                <Link to={{pathname:`/recipePage/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>  
                         <h2>{this.props.label}</h2>
                         <ol className="ol">
                             {this.props.ingredients.map( ingredient => (

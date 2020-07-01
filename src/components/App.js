@@ -15,7 +15,9 @@ const App = () => {
         <div className="titlePictureDiv"><a href="/"><img className="titlePicture" src={titlePhoto} alt=""/></a></div>
         <div className="subTitle">What would you like to cook today?</div>
         <Route path="/" exact component={RecipesGrid}/>
-        <Route path="/:label" component={RecipePage}/>
+        <Route path="/recipePage/:label"  component={RecipePage}/>
+        <Route path="/menu/:id"  component={RecipesGrid}/>
+
       </div>
     </Router>
   );

@@ -9,11 +9,10 @@ import { getRecipes } from '../actions';
 //the default search term for the first time the website is being mounted.
 var searchTerm = 'banana';
 
-
 class RecipesGrid extends React.Component {
     //run once after the mounting of the page and get the web api results using the default value.
     componentDidMount() {
-        this.props.getRecipes(searchTerm);        
+        this.props.getRecipes(searchTerm);  
     }
 
 
@@ -23,8 +22,12 @@ class RecipesGrid extends React.Component {
         this.props.getRecipes(searchTerm);
     }
 
-    
     render(){
+        //check if search term was picked from menu. If so, assign the value to the 'searchTerm' variable
+        //console.log(this.props.match.url.substring(0,6)); 
+        if (this.props.match.path.substring(0,6) === '/menu/') {  
+            searchTerm = this.props.match.url.substr(6);   
+        } 
         return(
             <div>
                 <form onSubmit={this.onSubmitToGetRecipes} className="search-form">
