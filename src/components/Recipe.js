@@ -19,7 +19,7 @@ class Recipe extends React.Component {
         } else {
             searchTermUpdated = this.props.searchTerm;
         }
-        
+
         return(
             <div className="recipe">
                 <div className="recipeImageRow">
@@ -38,11 +38,10 @@ class Recipe extends React.Component {
                             ))}
                         </ol>
                     </Link>
-                    <button className="moreRecipesBtn" onClick={() => {
-                        relatedRecipesValue = relatedRecipes(this.props.ingredients, this.props.getRecipesAction);
-                        console.log(searchTermUpdated);
-                    }} title="more recipes like this!">
-                        <i className="ellipsis horizontal icon"></i>{this.props.searchTerm}
+                    <button className="moreRecipesBtn" 
+                        onClick={() => relatedRecipesValue = relatedRecipes(this.props.ingredients, this.props.getRecipesAction)} 
+                        title="more recipes like this!">
+                        <i className="ellipsis horizontal icon"></i>
                     </button>
                 </div>
             </div>

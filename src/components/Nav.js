@@ -4,14 +4,12 @@ import { connect } from 'react-redux';
 import  {getRecipes}  from '../actions';
 
 
-//<li><a href="#" onClick={()=> this.props.getRecipesAction('BreakFast')}>BreakFast</a></li>
-
 class Nav extends React.Component {
     render(){
         return (
             <div className="navTop">
                 <nav>
-                    <label for="drop" className="toggle">Food Menu</label>
+                    <label htmlFor="drop" className="toggle">Food Menu</label>
                     <input type="checkbox" id="drop" />
                         <ul className="menu">
                             <li>
