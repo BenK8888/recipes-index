@@ -9,7 +9,7 @@ var i =0;
 
 class RecipePage extends React.Component {
     componentDidMount() {
-        //the 'match' property is automatically
+        //get only the needed recipe by providing the needed  search terms('match' and location properties are passed automatically)
         this.props.getRecipe(this.props.location.state.searchTerm, this.props.match.params.label);
         //console.log(this.props.location.state.searchTerm + ' | ' + this.props.match.params.label) ;
     }

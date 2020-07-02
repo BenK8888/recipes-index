@@ -13,7 +13,10 @@ let relatedRecipesValue = '';
 
 class Recipe extends React.Component {
     render() {
-        //checks if used the 'relatedRecipes' function. if so, we want to change the search term we use in order to get the right recipePage when clicked.
+        //shorten the syntax for callig the props for a better looking code
+        const {label, image, ingredients} = this.props;
+
+        //check if the 'relatedRecipes' function was used. if so, we'll change the search term we use in order to get the matching recipePage when clicked.
         if (relatedRecipesValue) {
             searchTermUpdated = relatedRecipesValue;
         } else {
@@ -23,15 +26,15 @@ class Recipe extends React.Component {
         return(
             <div className="recipe">
                 <div className="recipeImageRow">
-                    <Link to={{pathname:`/recipePage/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>
-                        <img className="image" src={this.props.image} alt=""/>
+                    <Link to={{pathname:`/recipePage/${label}`, state: {searchTerm: searchTermUpdated}}}>
+                        <img className="image" src={image} alt=""/>
                     </Link>
                 </div>
                 <div className="recipeDetailsRow">
-                <Link to={{pathname:`/recipePage/${this.props.label}`, state: {searchTerm: searchTermUpdated}}}>  
-                        <h2>{this.props.label}</h2>
+                <Link to={{pathname:`/recipePage/${label}`, state: {searchTerm: searchTermUpdated}}}>  
+                        <h2>{label}</h2>
                         <ol className="ol">
-                            {this.props.ingredients.map( ingredient => (
+                            {ingredients.map( ingredient => (
                                 <div key = {i++}>
                                     <li>{ingredient.text}</li>
                                 </div>
@@ -39,7 +42,7 @@ class Recipe extends React.Component {
                         </ol>
                     </Link>
                     <button className="moreRecipesBtn" 
-                        onClick={() => relatedRecipesValue = relatedRecipes(this.props.ingredients, this.props.getRecipesAction)} 
+                        onClick={() => relatedRecipesValue = relatedRecipes(ingredients, this.props.getRecipesAction)} 
                         title="more recipes like this!">
                         <i className="ellipsis horizontal icon"></i>
                     </button>
@@ -51,26 +54,26 @@ class Recipe extends React.Component {
 }
 
 
-//get the recipes that are related to this recipe by ingredients
+//find the ingredients in the chosen recipe and get the recipes that are have the same ingredients
 const relatedRecipes = (ingredients, getRecipesAction) => {
     //a list of basic ingredients
     const basicIngredList = ['salt','pepper','oil','flour','garlic','sugar','water','onion','olive','chicken','juice','milk','lemon','butter','egg','cheese','wheat','vegetable','vanilla','vinegar','parsley','honey','soy','wine','seeds','celery','rice','cinnamon','tomato','bread','eggs','onions','yeast','leaves','broth','tomatoes','cream','cloves','thyme','peeled','ginger','beans','soda','basil','mushrooms','apple','parmesan','yogurt','stock','bell','oats','sodium','beef','flakes','carrot','oregano','chocolate','cumin','paprika','sesame','mustard','spinach','corn','potatoes','coconut','carrots','nutmeg','cilantro','raisins','chili','syrup','peas','peanut','almond','walnuts','canned','lime','leaf','pineapple','margarine','cabbage','cucumber','broccoli','cornstarch','zucchini','coriander', 'paste','turkey' ,'banana','almonds' ,'nuts','maple' ,'cheddar' ,'cider' ,'scallions', 'lettuce', 'dill'];
-    let keyIngredWords = [];
-    let finalArray = [];
+    let recipeIngred = [];
+    let finalIngredList = [];
     ingredients.forEach((ingredient) =>{                                      //map over every ingredient line
-        keyIngredWords = (ingredient.text.split(' '));                  
-        keyIngredWords.forEach((keyIngredWord) => {                           //map over every word in ingredient line
+        recipeIngred = (ingredient.text.split(' '));                  
+        recipeIngred.forEach((ingred) => {                                    //map over every word in ingredient line
             basicIngredList.forEach((basicIngredItem) => {                    //map over every word in the basic ingredients list  
-                if (keyIngredWord === basicIngredItem) {
-                    finalArray.push(keyIngredWord);
+                if (ingred === basicIngredItem) {
+                    finalIngredList.push(ingred);
                 }
             })
         })
     })                          
     //join the strings in the array into one string
-    finalArray = finalArray.join(' ');
-    getRecipesAction(finalArray) ;
-    return finalArray;
+    finalIngredList = finalIngredList.join(' ');
+    getRecipesAction(finalIngredList) ;
+    return finalIngredList;
 }
 
 

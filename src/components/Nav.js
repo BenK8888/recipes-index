@@ -8,6 +8,7 @@ class Nav extends React.Component {
     render(){
         //shorten the syntax for callig the 'getRecipesAction' action for a better looking code
         const { getRecipesAction } = this.props.getRecipesAction;
+        
         return (
             <div className="navTop">
                 <nav>
