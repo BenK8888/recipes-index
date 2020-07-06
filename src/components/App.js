@@ -17,7 +17,6 @@ const App = () => {
         <Route path="/" exact component={RecipesGrid}/>
         <Route path="/recipePage/:label"  component={RecipePage}/>
         <Route path="/menu/:id"  component={RecipesGrid}/>
-
       </div>
     </Router>
   );
