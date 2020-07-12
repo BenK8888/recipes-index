@@ -16,7 +16,7 @@ export const getRecipes = (searchTerm) => async (dispatch) => {
     dispatch ({ type: 'GET_RECIPES', payload: data.hits });
 }
 
-export const getRecipe = (searchTerm, recipeLabel) => async (dispatch) => {
+export const getSingleRecipe = (searchTerm, recipeLabel) => async (dispatch) => {
     const response = await fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=${APP_ID}&app_key=${APP_KEY}`);
     const data = await response.json();    
     data.hits.forEach(recipe => {   

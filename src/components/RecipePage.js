@@ -1,7 +1,7 @@
 import '../App.css';
 import React from 'react';
 import { connect } from 'react-redux';
-import  {getRecipe}  from '../actions';
+import  {getSingleRecipe}  from '../actions';
 //withBrowser is used for getting data from the match property
 import { withRouter } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ var i =0;
 class RecipePage extends React.Component {
     componentDidMount() {
         //get only the needed recipe by providing the needed  search terms('match' and location properties are passed automatically)
-        this.props.getRecipe(this.props.location.state.searchTerm, this.props.match.params.label);
+        this.props.getSingleRecipe(this.props.location.state.searchTerm, this.props.match.params.label);
         //console.log(this.props.location.state.searchTerm + ' | ' + this.props.match.params.label) ;
     }
 
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => {
     
 }
 
-export default withRouter(connect(mapStateToProps, {getRecipe})(RecipePage));
+export default withRouter(connect(mapStateToProps, {getSingleRecipe})(RecipePage));
